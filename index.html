@@ -56,6 +56,7 @@
   </div>
 </div>
 <script>
+var date;
 var hourElem = document.getElementById("hour");
 var minuteElem = document.getElementById("minute");
 var secondElem = document.getElementById("second");
@@ -68,17 +69,11 @@ var stringify = function( number ) {
    }
 };
 //Update watch by checking current time and make a sting out of it.
-var hour = function() {
-  date = new Date();
-  timeElem.innerHTML = stringify( date.getHours() );
-};
-var minute = function() {
-  date = new Date();
-  timeElem.innerHTML = stringify( date.getMinutes() );
-};
-var second = function() {
-  date = new Date();
-  timeElem.innerHTML = stringify( date.getSeconds() );
+var watch = function(){
+  date = new Date();  
+  hourElem.innerHTML = stringify( date.getHours() );
+  minuteElem.innerHTML = stringify( date.getMinutes() );
+  secondElem.innerHTML = stringify( date.getSeconds() );
 };
 //update watch in every 1000 milliseconds
 setInterval( watch, 1000 );
